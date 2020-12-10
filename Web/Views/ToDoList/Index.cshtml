@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Web.Models.ToDoListViewModel>
+@{
+    ViewData["Title"] = "Tasks";
+}
+
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">List of Tasks</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <p>
+                    <a href="@Url.Action("Create","ToDoList")" class="btn btn-primary btn-icon-split">
+                        <span class="text">Create Task</span>
+                    </a>
+                </p>
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th class="align-items-center">
+                                @Html.DisplayNameFor(model => model.Id)
+                            </th>
+                            <th align="center">
+                                @Html.DisplayNameFor(model => model.Title)
+                            </th>
+                            <th align="center">
+                                @Html.DisplayNameFor(model => model.UserName)
+                            </th>
+                            <th align="center">
+                                @Html.DisplayNameFor(model => model.Date)
+                            </th>
+                            <th align="center">
+                               Is it Done?
+                            </th>
+                            <th align="center">
+                                @Html.DisplayNameFor(model => model.Done)
+                            </th>
+                            <th align="center">
+                                Edit
+                            </th>
+                            <th align="center">
+                                Details
+                            </th>
+                            <th align="center">
+                                Delete
+                            </th>
+</thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>
+                                <td align="center">
+                                    @Html.DisplayFor(modelItem => item.Title)
+                                </td>
+                                <td align="center">
+                                    @Html.DisplayFor(modelItem => item.UserName)
+                                </td>
+                                <td align="center">
+                                    @Html.DisplayFor(modelItem => item.Date)
+                                </td>
+                                <td align="center">
+                                    @if (Model.FirstOrDefault().Done)
+                                    {
+                                        <a href="@Url.Action("Undone","ToDoList", new { id = item.Id })">
+                                            <i class="fas fa-clipboard" style="color:red"></i>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@Url.Action("Done","ToDoList", new { id = item.Id })">
+                                            <i class="fas fa-clipboard-check" style="color:blueviolet"></i>
+                                        </a>
+                                    }
+                                </td>
+                                <td align="center">
+                                    @if (Model.FirstOrDefault().Done)
+                                    {
+                                        <text>Done</text>
+                                    }
+                                </td>
+                                <td align="center">
+                                    <a href="@Url.Action("Edit","ToDoList", new { id = item.Id })"><i class="fas fa-edit" style="color:blueviolet"></i> </a>
+                                </td>
+                                <td align="center">
+                                    <a href="@Url.Action("Details","ToDoList", new { id = item.Id })"><i class="fas fa-file" style="color:green"></i> </a>
+                                </td>
+                                <td align="center">
+                                    <a href="@Url.Action("Delete","ToDoList", new { Id = item.Id })"><i class="fas fa-trash" style="color:red"></i> </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

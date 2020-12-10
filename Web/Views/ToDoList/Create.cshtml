@@ -1,0 +1,77 @@
+﻿@model Web.Models.ToDoListViewModel
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Create Task";
+}
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Create Task</h1>
+    <p class="mb-4">Here you can create a new task!</p>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Create Task</h6>
+        </div>
+        <div class="card-body">
+
+            @using (Html.BeginForm("Create", "ToDoList", FormMethod.Post, new { @id = "form" }))
+            {
+
+                @Html.AntiForgeryToken()
+
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="p-5">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <b> @Html.LabelFor(model => model.Title)</b>
+                                    @Html.TextBoxFor(model => model.Title, new { @class = "form-control", @placeholder = "Title", @id = "Title" })
+                                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <b> @Html.LabelFor(model => model.Description)</b>
+                                    @Html.TextBoxFor(model => model.Description, new { @class = "form-control", @placeholder = "Description", @id = "Description" })
+                                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <b>@Html.LabelFor(model => model.UserName)<br /></b>
+                                    @HttpContextAccessor.HttpContext.Session.GetString("UserNameSession")
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <b>@Html.LabelFor(model => model.Date)<br /></b>
+                                    @DateTime.Now
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3 mb-3 mb-sm-0">
+                                    <a href="javascript:{}" class="btn btn-primary btn-icon-split" onclick="document.getElementById('form').submit()">
+                                        <span class="text">Create</span>
+                                    </a>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-3 mb-3 mb-sm-0">
+                                        <a href="@Url.Action("Index","ToDoList")" class="btn btn-success btn-icon-split">
+                                            <span class="text">Back</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>

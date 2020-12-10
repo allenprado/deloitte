@@ -1,0 +1,14 @@
+C:\Desenvolvimento\DotNet\DBInMemory\Infra\bin\Debug\netcoreapp3.1\Infra.deps.json
+C:\Desenvolvimento\DotNet\DBInMemory\Infra\bin\Debug\netcoreapp3.1\Infra.dll
+C:\Desenvolvimento\DotNet\DBInMemory\Infra\obj\Debug\netcoreapp3.1\Infra.csprojAssemblyReference.cache
+C:\Desenvolvimento\DotNet\DBInMemory\Infra\obj\Debug\netcoreapp3.1\Infra.AssemblyInfoInputs.cache
+C:\Desenvolvimento\DotNet\DBInMemory\Infra\obj\Debug\netcoreapp3.1\Infra.AssemblyInfo.cs
+C:\Desenvolvimento\DotNet\DBInMemory\Infra\bin\Debug\netcoreapp3.1\Infra.pdb
+C:\Desenvolvimento\DotNet\DBInMemory\Infra\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Desenvolvimento\DotNet\DBInMemory\Infra\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Desenvolvimento\DotNet\DBInMemory\Infra\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Desenvolvimento\DotNet\DBInMemory\Infra\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Desenvolvimento\DotNet\DBInMemory\Infra\obj\Debug\netcoreapp3.1\Infra.csproj.CopyComplete
+C:\Desenvolvimento\DotNet\DBInMemory\Infra\obj\Debug\netcoreapp3.1\Infra.dll
+C:\Desenvolvimento\DotNet\DBInMemory\Infra\obj\Debug\netcoreapp3.1\Infra.pdb
+C:\Desenvolvimento\DotNet\DBInMemory\Infra\obj\Debug\netcoreapp3.1\Infra.csproj.CoreCompileInputs.cache

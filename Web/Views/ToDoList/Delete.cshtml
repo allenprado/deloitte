@@ -1,0 +1,92 @@
+﻿@model Web.Models.ToDoListViewModel
+
+@{
+    ViewData["Title"] = "Delete Task";
+}
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Delete Tasks</h1>
+    <p class="mb-4">Here you can delete Tasks!</p>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Delete Tasks</h6>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-7">
+
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Id)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Title)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Description)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.UserName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.UserName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Date)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Date)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Done)
+                        </dt>
+
+                        <dd>
+                            @if (Model.Done)
+                            {
+                                <text>Done</text>
+                            }
+                        </dd>
+                    </dl>
+
+                    @using (Html.BeginForm("Delete", "ToDoList", FormMethod.Post, new { @id = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-group row">
+                            <div class="col-sm-3 mb-3 mb-sm-0">
+                                <a href="javascript:{}" class="btn btn-danger btn-icon-split" onclick="document.getElementById('form').submit()">
+                                    <span class="text">Delete</span>
+                                </a>
+                            </div>
+                            <div class="col-sm-3">
+                                <a href="@Url.Action("Index","ToDoList")" class="btn btn-success btn-icon-split">
+                                    <span class="text">Back</span>
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
