@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T7ETx+zvxBEF8LQQo2RyxdU7IgiW6CcklChRSW8nkwfuPpt+Om3Cl5zjasSiXAT2uesXto8ujtgDkLqvmjW7wg==",
+  "dgSpecHash": "+ku8VaJXG7DYEXaKvvjUmDtiKdNvhRfwV7QKEMWjHc7YXFG/Uco+AMoiSKlqSeEiSC2lpoBDdZwEsw+fVaDzLg==",
   "success": true,
-  "projectFilePath": "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

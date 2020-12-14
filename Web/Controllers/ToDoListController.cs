@@ -14,7 +14,7 @@ namespace Web.Controllers
     {
         private readonly IHttpContextAccessor _accessor;
         private readonly IToDoListApp _toDoList;
-        
+
         public ToDoListController(IHttpContextAccessor accessor, IToDoListApp toDoList)
         {
             _accessor = accessor;
@@ -23,29 +23,42 @@ namespace Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            this.IsLogged();
-            List<ToDoListViewModel> listToDoVM = new List<ToDoListViewModel>();
-
-            foreach (var item in await _toDoList.List())
+            if (!this.IsLogged())
             {
-                listToDoVM.Add(new ToDoListViewModel
-                {
-                    Id = item.Id,
-                    UserName = item.UserName,
-                    Title = item.Title,
-                    Description = item.Description,
-                    Date = item.Date,
-                    Done = item.Done
-                });
+                return RedirectToAction("Login", "Account");
             }
+            else
+            {
+                List<ToDoListViewModel> listToDoVM = new List<ToDoListViewModel>();
 
-            return View(listToDoVM);
+                foreach (var item in await _toDoList.List())
+                {
+                    listToDoVM.Add(new ToDoListViewModel
+                    {
+                        Id = item.Id,
+                        UserName = item.UserName,
+                        Title = item.Title,
+                        Description = item.Description,
+                        Date = item.Date,
+                        Done = item.Done
+                    });
+                }
+
+                return View(listToDoVM);
+            }
         }
 
         public IActionResult Create()
         {
-            this.IsLogged();
-            return View();
+
+            if (!this.IsLogged())
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpPost]
@@ -71,18 +84,25 @@ namespace Web.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            this.IsLogged();
-            var todoList = await _toDoList.GetEntityById(id);
-            ToDoListViewModel todoListVM = new ToDoListViewModel();
 
-            todoListVM.Id = todoList.Id;
-            todoListVM.Title = todoList.Title;
-            todoListVM.Description = todoList.Description;
-            todoListVM.UserName = todoList.UserName;
-            todoListVM.Date = todoList.Date;
-            todoListVM.Done = todoList.Done;
+            if (!this.IsLogged())
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                var todoList = await _toDoList.GetEntityById(id);
+                ToDoListViewModel todoListVM = new ToDoListViewModel();
 
-            return View(todoListVM);
+                todoListVM.Id = todoList.Id;
+                todoListVM.Title = todoList.Title;
+                todoListVM.Description = todoList.Description;
+                todoListVM.UserName = todoList.UserName;
+                todoListVM.Date = todoList.Date;
+                todoListVM.Done = todoList.Done;
+
+                return View(todoListVM);
+            }
         }
 
         [HttpPost]
@@ -109,32 +129,48 @@ namespace Web.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var todoList = await _toDoList.GetEntityById(id);
-            ToDoListViewModel todoListVM = new ToDoListViewModel();
 
-            todoListVM.Id = todoList.Id;
-            todoListVM.Title = todoList.Title;
-            todoListVM.Description = todoList.Description;
-            todoListVM.UserName = todoList.UserName;
-            todoListVM.Date = todoList.Date;
-            todoListVM.Done = todoList.Done;
+            if (!this.IsLogged())
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                var todoList = await _toDoList.GetEntityById(id);
+                ToDoListViewModel todoListVM = new ToDoListViewModel();
 
-            return View(todoListVM);
+                todoListVM.Id = todoList.Id;
+                todoListVM.Title = todoList.Title;
+                todoListVM.Description = todoList.Description;
+                todoListVM.UserName = todoList.UserName;
+                todoListVM.Date = todoList.Date;
+                todoListVM.Done = todoList.Done;
+
+                return View(todoListVM);
+            }
         }
 
         public async Task<IActionResult> Delete(int Id)
         {
-            var todoList = await _toDoList.GetEntityById(Id);
-            ToDoListViewModel todoListVM = new ToDoListViewModel();
 
-            todoListVM.Id = todoList.Id;
-            todoListVM.Title = todoList.Title;
-            todoListVM.Description = todoList.Description;
-            todoListVM.UserName = todoList.UserName;
-            todoListVM.Date = todoList.Date;
-            todoListVM.Done = todoList.Done;
+            if (!this.IsLogged())
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                var todoList = await _toDoList.GetEntityById(Id);
+                ToDoListViewModel todoListVM = new ToDoListViewModel();
 
-            return View(todoListVM);
+                todoListVM.Id = todoList.Id;
+                todoListVM.Title = todoList.Title;
+                todoListVM.Description = todoList.Description;
+                todoListVM.UserName = todoList.UserName;
+                todoListVM.Date = todoList.Date;
+                todoListVM.Done = todoList.Done;
+
+                return View(todoListVM);
+            }
         }
 
         [HttpPost, ActionName("Delete")]
@@ -152,47 +188,63 @@ namespace Web.Controllers
         public async Task<IActionResult> Done(int id)
         {
 
-            var todoList = await _toDoList.GetEntityById(id);
 
-            if (ModelState.IsValid)
+            if (!this.IsLogged())
             {
-                todoList.Date = DateTime.Now;
-                todoList.Done = true;
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                var todoList = await _toDoList.GetEntityById(id);
 
-                await _toDoList.Update(todoList);
-                TempData["success"] = "This task is done!";
+                if (ModelState.IsValid)
+                {
+                    todoList.Date = DateTime.Now;
+                    todoList.Done = true;
+
+                    await _toDoList.Update(todoList);
+                    TempData["success"] = "This task is done!";
+                    return RedirectToAction("Index");
+                }
+                TempData["error"] = "something went wrong";
                 return RedirectToAction("Index");
             }
-            TempData["error"] = "something went wrong";
-            return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Undone(int id)
         {
 
-            var todoList = await _toDoList.GetEntityById(id);
-
-            if (ModelState.IsValid)
+            if (!this.IsLogged())
             {
-                todoList.Date = DateTime.Now;
-                todoList.Done = false;
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                var todoList = await _toDoList.GetEntityById(id);
 
-                await _toDoList.Update(todoList);
-                TempData["success"] = "This task is done!";
+                if (ModelState.IsValid)
+                {
+                    todoList.Date = DateTime.Now;
+                    todoList.Done = false;
+
+                    await _toDoList.Update(todoList);
+                    TempData["success"] = "This task is done!";
+                    return RedirectToAction("Index");
+                }
+                TempData["error"] = "something went wrong";
                 return RedirectToAction("Index");
             }
-            TempData["error"] = "something went wrong";
-            return RedirectToAction("Index");
         }
 
-        public void IsLogged()
+        public bool IsLogged()
         {
             var isLogged = _accessor.HttpContext.Session.GetInt32("IsLoggedSession");
             if (isLogged != 1)
             {
-                RedirectToAction("Login", "Account");
+                return false;
             }
-            
+
+            return true;
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xkKEygfwB1xEZRVtvbee5EGaydU3S6sKpL7UGt9aYU7viSJPjHJFkNYSD20Rz0qKrG0r6Gc506C1S4+qs0s5dA==",
+  "dgSpecHash": "KsHSXftggdGWZlr+6R9esH3ViEY/7eHF5D5brlOSqsyeG+/+dt9sr/j1fK+PO4UEW/M8V6ySmjiIZBffjFB9ag==",
   "success": true,
-  "projectFilePath": "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Infra\\Infra.csproj",
+  "projectFilePath": "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Infra\\Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Allen\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.1\\microsoft.entityframeworkcore.5.0.1.nupkg.sha512",
     "C:\\Users\\Allen\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.1\\microsoft.entityframeworkcore.abstractions.5.0.1.nupkg.sha512",

@@ -52,11 +52,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Application\\Application.csproj",
+      "projectPath": "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\Allen\\.nuget\\packages\\",
-      "outputPath": "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Application\\obj\\",
+      "outputPath": "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -75,11 +75,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Domain\\Domain.csproj"
+            "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Domain\\Domain.csproj"
             },
-            "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Entities\\Entities.csproj"
+            "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Entities\\Entities.csproj"
             }
           }
         }

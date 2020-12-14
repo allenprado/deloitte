@@ -635,11 +635,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Web\\Web.csproj",
+      "projectUniqueName": "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Web\\Web.csproj",
       "projectName": "Web",
-      "projectPath": "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Web\\Web.csproj",
+      "projectPath": "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Web\\Web.csproj",
       "packagesPath": "C:\\Users\\Allen\\.nuget\\packages\\",
-      "outputPath": "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Web\\obj\\",
+      "outputPath": "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -658,11 +658,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Application\\Application.csproj": {
-              "projectPath": "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Application\\Application.csproj"
+            "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Application\\Application.csproj": {
+              "projectPath": "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Application\\Application.csproj"
             },
-            "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Infra\\Infra.csproj": {
-              "projectPath": "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Infra\\Infra.csproj"
+            "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Infra\\Infra.csproj": {
+              "projectPath": "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Infra\\Infra.csproj"
             }
           }
         }

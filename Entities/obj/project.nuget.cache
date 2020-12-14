@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kB90p3ACW12aGScazkrHFi0RFDpoWJWO4zYay5J/O4z/GOIwzCUpkG1ZDXNOhde9bmRsldZRwMK6ObA4iSOVTQ==",
+  "dgSpecHash": "wXCHLJTIWeQtnJLnrr2l/z1hr9IiPwL6j5/6oOdUP4ZJWM/e9ZOnF4oIUqc8y08jceqSfDocUALIsuktQ1CdTQ==",
   "success": true,
-  "projectFilePath": "C:\\Desenvolvimento\\DotNet\\DBInMemory\\Entities\\Entities.csproj",
+  "projectFilePath": "C:\\Desenvolvimento\\Git\\Deloitte\\deloitte\\Entities\\Entities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
